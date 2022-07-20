@@ -1,14 +1,14 @@
 # JavaScript Challenge: Password Generator
 
-
+This challenge forms part of the course work for week 3, Module 3, set by the University of Birmingham and Trilogy Ltd's Coding Bootcamp.
 
 ## Project Description
 
+The aim of this challenge was to create a password generator application that can be used to generate a random password, based on user selected criteria.
 
 
 
-
-### Image of Starter Code Website
+### Starter Code Mock-up
 
 ![](assets/images/.png)
 
