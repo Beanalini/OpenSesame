@@ -17,7 +17,7 @@ This challenge required the underlying JavaScript code that randomly generates a
 
 ### Starter Code Mock-up
 
-![](assets/images/password_gen_mockup.png)
+![](assets/images/password-generator-mockup.png)
 
 
 The functionality that the JavaScript needs to implement is defined by the user story and acceptance criteria listed below.  
