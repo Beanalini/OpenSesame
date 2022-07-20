@@ -15,7 +15,7 @@ body,
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
-  background-image: url("padlock_image.png");
+  background-image: url("../images/padlock_image.png");
   background-size: cover;
   background-position: center;
 }
