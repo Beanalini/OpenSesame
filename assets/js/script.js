@@ -3,8 +3,7 @@ var generate_btn = document.getElementById("generate");
 var passwordText = document.querySelector("#password");
 
 
-//Create character arrays using unicode character codes.  Pass the number ranges
-// of the required unicode characters as arguments to characterTypeArray()
+/*Create character arrays using unicode character codes.  Pass the number ranges of the required unicode characters as arguments to characterTypeArray()*/
 const lowercase = characterTypeArray(97, 122);  //create lower case array
 console.log(lowercase);
 const uppercase = characterTypeArray(65, 90); //create upper case array
@@ -15,13 +14,12 @@ const symbol_arr = characterTypeArray(33, 47)  //Create symbol array
   .concat(characterTypeArray(123, 126));
   console.log(symbol_arr.length);
   console.log();
-const num_arr = characterTypeArray(48, 57);//create number array
+const num_arr = characterTypeArray(48, 57); //create number array
+ 
+//console.log(lowercase.length + uppercase.length + num_arr.length + symbol_arr.length);
 
-console.log(lowercase.length + uppercase.length + num_arr.length + symbol_arr.length);
-
-/**characterTypeArray()  loops through the character range numbers, and stores a*
- * unicode character in an array on each  iteration of the for loop. *
- * The character array is returned to the calling function *********/
+/*characterTypeArray()  loops through the character range numbers, and stores a unicode character in an array on each  iteration of the for loop. 
+The character array is returned to the calling function */
 function characterTypeArray(range_l, range_h) {
   const array = [];
   for (let i = range_l; i <= range_h; i++) {
@@ -30,10 +28,10 @@ function characterTypeArray(range_l, range_h) {
   return array;
 } 
 
-//add event listener to the generate button, when activated call writePassword()
+//add event listener to the generate button, when activated calls writePassword()
 generate_btn.addEventListener("click", writePassword);
 
-//writePassword()  calls generatePassword() which returns the password and renders it to the screen inside the password text area.
+//writePassword()  calls generatePassword() which returns the password and writes it to the screen inside the password text area.
 function writePassword() {
 
   //showUserSelect();
@@ -83,7 +81,7 @@ console.log("length " + psw_length +  " uppercase " + upper_criteria + " lowerca
  [1] Test for each charater type selcted by the user then..
  [2] Use of the random function could result in no characters of a particular type being selected. In order to mitigate against this scenario, I initially select one character from each user selected character array, store it in the password array, with the reamining characters added using a for loop further down.
  [3] Increment num_char_types var - this will be used to adjust the number of for loop iterations needed to fill the password array.
- [4] concatanate character arrays selected by the user which will be used to select the reaming password characters in the for loop below.
+ [4] concatnate character arrays selected by the user which will be used to select the remaining password characters in the for loop below.
  */
   if (lower_criteria === true) {  
   passWord.push(lowercase[Math.floor(Math.random() * lowercase.length)]);

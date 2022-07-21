@@ -10,7 +10,7 @@ The aim of this challenge was to create a password generator application that ca
 ## Project Requirements
 ---
 
-This challenge required the underlying JavaScript code that randomly generates a password, and dynamically updates the user interface, to be written. The HTML, and CSS files were provided as starter code.
+This challenge required the underlying JavaScript code, that randomly generates a password and dynamically updates the user interface, to be written. The HTML, and CSS files were provided as starter code.
 
 <a href="https://github.com/coding-boot-camp/friendly-parakeet"> Link to the starter code repository</a>
 
@@ -58,12 +58,25 @@ THEN the password is either displayed in an alert or written to the page
 ---
 Password generator functionality implemented in JavaScript:
 
-- 
+- Input box and checkboxes are used by the user to select password length and selection of character types respectively.
+- An event listener is added to the generate password button; when the 'generate password' button is clicked, the password generation code is activated.
+- The user selection is validated:
+  - The password length input box has max and min properties set.  However, this does not prevent the user typing in a value outside of the allowed range (8-128 characters). If a user inputs a password length outside the allowed range, an alert message prompts the user to input a value in the allowed range. The default setting for the password word length has been set to 10 characters.
+  - If the user does not select any character types, they are presented with an alert message requesting character type selection.
+- Character type arrays are created from unicode characters using the JS CharCode  property.
+- The method used to generate a password uses the math.random function. However, using a random function could result in no characters of a particular type being selected.  Therefore, in order to mitigate against this scenario and meet the acceptence criteria, which requires 'a password to be generated that meets the user selected criteria', I initially select one character, randomly, from each user selected character array and store it in a password array.  A variable is used to hold the number of character types the user has selected and is used to adjust the number of for loop iterations needed to fill the password array.
+- A random number generator provides the index which is used to select a character from an array formed from concatenating all the user selected character arrays. The selected character is added to the password array. A for loop is used to repeat this functionality until the required number of password characters have been generated.  
 
-
+ 
 ## Usage
 ---
-
+- Open the  <a href="https://beanalini.github.io/OpenSesame/">Password Generator App</a>
+- Type the required password length into the input box, or alternatively use the up/down arrows inside the input box to select a value (the default setting is 10 character). 
+- Use the checkboxes to select the required character types to include in the password.
+- Click on the 'Password Generate' button.
+- A password meeting your selection criteria is generated and rendered to the screen.
+- If you enter a password length outside the allowed range, an alert message will ask you to select a value within the accepted range.
+- If you fail to select any character types, an alert message will ask you to make a selection.
 
 ##  Password Generator Screen Shots
 ---
