@@ -1,6 +1,6 @@
 //Decalre global variables
 
-var show = document.getElementById("user_option");
+
 var generate_btn = document.getElementById("generate");
 var passwordText = document.querySelector("#password");
 
@@ -32,10 +32,10 @@ function characterTypeArray(range_l, range_h) {
 //add event listener to the generate button
 generate_btn.addEventListener("click", writePassword);
 
-
+//writePassword  is called when the password generate button is clicked. It calls generatePassword() which returns the pass word which is then written to the text area.
 function writePassword() {
 
-  showUserSelect();
+  //showUserSelect();
 
   var password = generatePassword();
 
@@ -43,28 +43,16 @@ function writePassword() {
 }
 
 
-function showUserSelect() {
-  var show = document.getElementById("user_option");
-  show.setAttribute("style", "display:block");
-
-  //alert("inside user select");
-  console.log("button has worked");
-  
-  
-  
-  return
-}
-
 function generatePassword() {
-  
+  //Initialise Variables
   var passWord = []; // holds  generated password
-  var userChar_arr = []; // user requsted character types
-  var num_char_types = 0; // holds number of usesr character types
-  var psw = 0;
+  var userChar_arr = []; //contains all user required charaters 
+  var num_char_types = 0; // holds the number of selected character types 
+  var psw = 0; //password string returned to calling function
   
   passwordText.value = ""; //Clear previous password from the text area  
 
-//Get the user seslected information
+//Get the user selected information
  const psw_length = document.getElementById("length").value;
  const upper_criteria = document.getElementById("uppercase").checked;
  const lower_criteria = document.getElementById("lowercase").checked;
@@ -131,7 +119,7 @@ console.log(passWord +  "  " + passWord.length) ;
 psw = passWord.join('');
 
 //Change the display attribute to none, the user needs to refresh the screen to change the character types
-//show.setAttribute("style", "display:none");
+
 //for error checking
 console.log(psw);
 return(psw)
