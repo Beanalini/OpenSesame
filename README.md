@@ -89,7 +89,7 @@ User selection criteria and generated password:
 <a href="https://beanalini.github.io/OpenSesame/">Link to the deployed website </a>
 
 
-<a href="https://github.com/Beanalini/OpenSesame"> Link to the portfolio repository</a>
+<a href="https://github.com/Beanalini/OpenSesame"> Link to the password generator repository</a>
 
 ## Technologies Used
 ---
