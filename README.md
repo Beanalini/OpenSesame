@@ -59,7 +59,7 @@ THEN the password is either displayed in an alert or written to the page
 Password generator functionality implemented in JavaScript:
 
 - Input box and checkboxes are used by the user to select password length and selection of character types respectively.
-- An event listener is added to the generate password button; when the 'generate password' button is clicked, the password generation code is activated.
+- An event listener has been added to the generate password button; when the 'generate password' button is clicked, the password generation code is activated.
 - The user selection is validated:
   - The password length input box has max and min properties set.  However, this does not prevent the user typing in a value outside of the allowed range (8-128 characters). If a user inputs a password length outside the allowed range, an alert message prompts the user to input a value in the allowed range. The default setting for the password word length has been set to 10 characters.
   - If the user does not select any character types, they are presented with an alert message requesting character type selection.
@@ -90,7 +90,7 @@ Password generator Landing Page
 
 User prompt: no character types selected:
 
-![](assets/images/psw_length_not_selected.png)
+![](assets/images/no_char_types_selected.png)
 
 User prompt: Password length not within allowed range
 
