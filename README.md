@@ -70,14 +70,18 @@ Password generator functionality implemented in JavaScript:
 
 Password generator Landing Page
 
-![](assets/images/psw_gen_landing.png)
+![password generator app](assets/images/psw_gen_landing.png)
 
 
 
 
-User prompt to select character types:
+User prompt: no character types selected:
 
-![](assets/images/User_prompt.png)
+![](assets/images/psw_length_not_selected.png)
+
+User prompt: Password length not within allowed range
+
+![](assets/images/psw_length_not_selected.png)
 
 User selection criteria and generated password:
 
