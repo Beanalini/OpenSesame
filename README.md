@@ -90,11 +90,11 @@ Password generator Landing Page
 
 User prompt: no character types selected:
 
-![](assets/images/no_char_types_selected.png)
+![](assets/images/no_char_types_selected.PNG)
 
 User prompt: Password length not within allowed range
 
-![](assets/images/psw_length_not_selected.png)
+![](assets/images/psw_length_not_selected.PNG)
 
 User selection criteria and generated password:
 
