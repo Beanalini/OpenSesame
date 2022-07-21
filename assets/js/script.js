@@ -1,14 +1,13 @@
-//Decalre global variables
-
-
+//Access HTML elements
 var generate_btn = document.getElementById("generate");
 var passwordText = document.querySelector("#password");
 
-////Create character arrays from JS CharCode 
 
-const lowercase = characterTypeArray(97, 122);  //create lower case arrary
+//Create character arrays using unicode character codes.  Pass the number ranges
+// of the required unicode characters as arguments to characterTypeArray()
+const lowercase = characterTypeArray(97, 122);  //create lower case array
 console.log(lowercase);
-const uppercase = characterTypeArray(65, 90); //create upper case arry
+const uppercase = characterTypeArray(65, 90); //create upper case array
 console.log(uppercase);
 const symbol_arr = characterTypeArray(33, 47)  //Create symbol array
   .concat(characterTypeArray(58, 64))
@@ -20,7 +19,9 @@ const num_arr = characterTypeArray(48, 57);//create number array
 
 console.log(lowercase.length + uppercase.length + num_arr.length + symbol_arr.length);
 
-/************creates the character arrays, lower case, upper case, symbol and numeric from CharCode**************/
+/**characterTypeArray()  loops through the character range numbers, and stores a*
+ * unicode character in an array on each  iteration of the for loop. *
+ * The character array is returned to the calling function *********/
 function characterTypeArray(range_l, range_h) {
   const array = [];
   for (let i = range_l; i <= range_h; i++) {
@@ -29,10 +30,10 @@ function characterTypeArray(range_l, range_h) {
   return array;
 } 
 
-//add event listener to the generate button
+//add event listener to the generate button, when activated call writePassword()
 generate_btn.addEventListener("click", writePassword);
 
-//writePassword  is called when the password generate button is clicked. It calls generatePassword() which returns the pass word which is then written to the text area.
+//writePassword()  calls generatePassword() which returns the password and renders it to the screen inside the password text area.
 function writePassword() {
 
   //showUserSelect();
@@ -59,7 +60,7 @@ function generatePassword() {
  const num_criteria = document.getElementById("numbers").checked;
  const sym_criteria = document.getElementById("symbols").checked;
 
- /******* Validate if user selection ********/ 
+ /******* Validate user selection ********/ 
 
 //Display alert message if password length not within specified range of 8 - 128 characters.
 if (psw_length < 8 || psw_length > 128){
@@ -67,7 +68,7 @@ if (psw_length < 8 || psw_length > 128){
 
 }
 
-//Display an alert if the user has not selected any character types
+//Display an alert message if the user has not selected any character types
 if (upper_criteria === false && lower_criteria === false && num_criteria === false && sym_criteria === false) 
 {
   alert("Warning! Please select required character types");
@@ -78,10 +79,11 @@ if (upper_criteria === false && lower_criteria === false && num_criteria === fal
 //for error checking
 console.log("length " + psw_length +  " uppercase " + upper_criteria + " lowercase " + lower_criteria + " numbers " + num_criteria  + " symbols " + sym_criteria);
  
-/**if the user has selected a particular character type, do the following:
- [1] Ensure at least 1 of the required characters appears in the password.
- [2] Increment num_char_types var - this will be used to adjust the remaining number of password characters in the for loop.
- [3] Add character array to array used to randomly select the remaining password characters.
+/**after validating user selection criteria:
+ [1] Test for each charater type selcted by the user then..
+ [2] Use of the random function could result in no characters of a particular type being selected. In order to mitigate against this scenario, I initially select one character from each user selected character array, store it in the password array, with the reamining characters added using a for loop further down.
+ [3] Increment num_char_types var - this will be used to adjust the number of for loop iterations needed to fill the password array.
+ [4] concatanate character arrays selected by the user which will be used to select the reaming password characters in the for loop below.
  */
   if (lower_criteria === true) {  
   passWord.push(lowercase[Math.floor(Math.random() * lowercase.length)]);
@@ -126,13 +128,11 @@ console.log(passWord +  "  " + passWord.length) ;
 //create a string from the array of password characters
 psw = passWord.join('');
 
-//Change the display attribute to none, the user needs to refresh the screen to change the character types
 
 //for error checking
 console.log(psw);
+
 return(psw)
-
-
 
 }
 
