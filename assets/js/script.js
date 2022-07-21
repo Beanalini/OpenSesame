@@ -52,17 +52,25 @@ function generatePassword() {
   
   passwordText.value = ""; //Clear previous password from the text area  
 
-//Get the user selected information
+//Get user selected data
  const psw_length = document.getElementById("length").value;
  const upper_criteria = document.getElementById("uppercase").checked;
  const lower_criteria = document.getElementById("lowercase").checked;
  const num_criteria = document.getElementById("numbers").checked;
  const sym_criteria = document.getElementById("symbols").checked;
 
+ /******* Validate if user selection ********/ 
+
+//Display alert message if password length not within specified range of 8 - 128 characters.
+if (psw_length < 8 || psw_length > 128){
+  alert("Warning!   Please select a password length between 8 to 128 characters.")
+
+}
+
 //Display an alert if the user has not selected any character types
 if (upper_criteria === false && lower_criteria === false && num_criteria === false && sym_criteria === false) 
 {
-  alert("Please select required character types");
+  alert("Warning! Please select required character types");
   return(null)
 }
 
@@ -72,8 +80,8 @@ console.log("length " + psw_length +  " uppercase " + upper_criteria + " lowerca
  
 /**if the user has selected a particular character type, do the following:
  [1] Ensure at least 1 of the required characters appears in the password.
- [2] Increment num_char_types var - this will be used to adjust the reaming number of password characters in the for loop.
- [3] Add character array to array used to ransomly select the remaining password characters.
+ [2] Increment num_char_types var - this will be used to adjust the remaining number of password characters in the for loop.
+ [3] Add character array to array used to randomly select the remaining password characters.
  */
   if (lower_criteria === true) {  
   passWord.push(lowercase[Math.floor(Math.random() * lowercase.length)]);
