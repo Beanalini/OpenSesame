@@ -142,7 +142,7 @@ height: 20px;
   border: 2px dashed #1a48e1;
   border-radius: 6px;
   resize: none;
-  overflow: hidden;
+  overflow: auto;
   font-weight: bolder;
  
 }
